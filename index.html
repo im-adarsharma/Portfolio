@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adarsharma_605</title>
+    <link href="CSS/all.css" rel="stylesheet">
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/m4.png" type="images">
+    <script src="js/bootstrap.bundle.js" ></script>
+  
+<link href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+" rel="stylesheet"/>
+
+    <!--
+      - custom css link
+    -->
+<link href="css/style.css" rel="stylesheet" >
+  
+    <!--
+      - google font link
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .a{
+            
+          
+   color: aliceblue;
+        }
+        .z{
+            min-height: 2000px;
+       background:linear-gradient( 196deg, black,aliceblue);
+      
+        }
+        .n{
+         min-height: 150px;
+      
+       
+        
+   
+            
+        }
+      
+        .a7{
+        min-height: 200px;
+        padding-top: 30px; 
+
+       }
+        .h{
+            /* box-shadow: 0px 0px 50px burlywood; */
+            height:150px;
+           width: 150px;
+            border: 2px solid white;
+            margin-left: 10px;
+            padding-top: 60px;
+            color: aliceblue;
+            justify-content: center;
+            border-radius: 20px;
+            margin-bottom: 20px;
+           box-sizing: border-box;
+           display: flex;
+       background-size: cover;
+    
+        }
+      .k3{
+        min-height: 300px;
+        border: 2px solid black;
+      
+      }
+      .k4{
+        min-height: 300px;
+        background-color: black;
+      }
+      .gj{
+        margin-right: 0%;
+        margin-left: 100%;
+      }
+     .i{
+        justify-self:end;
+     }
+     :root {
+     /*   --bgcolor: linear-gradient(45deg,#4a148c,#d500f9);*/
+     --txtcolor: blanchedalmond;
+ }
+
+ .txt-mycolor {
+     color: var(--txtcolor)
+ }
+
+ #typing-container {
+      font-size: 22px;
+      white-space: nowrap;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+  justify-content: center;
+    }
+    #static-text {
+      margin-right: 5px;
+    }
+    #animated-text {
+      border-right: 2px solid black;
+      white-space: nowrap;
+color: burlywood;
+      overflow: hidden;
+    }
+
+ 
+    </style>
+</head>
+<body>
+    <div class="container-fluid  content-card pe-4">
+       
+       <div class="row">
+        
+        <div class="col-10">
+              
+       
+            <div class="container-fluid">
+    <nav class="navbar navbar-expand  navbar-dark  me-4 ">
+                <button class="navbar-toggler position-top" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><b class="txt-mycolor">Potfolio</b></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-2">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#projects">PROJECTS</a>
+                            </li>
+                         
+                            <li class="nav-item">
+                                <a class="nav-link" href="#resume">RESUME</a>
+                            </li>
+                           
+                          <li>
+                                <a class="nav-link" href="#contact">CONTACT ME</a>
+                            </li>
+                        </ul>
+   
+                    </div>
+                </div>
+                
+            </div>
+           
+        </nav>
+      
+        </div>
+       </div>
+    <div style="min-height: 400px; " class="row  mt-3 " >
+       
+        <div style="text-align: center; " class="col-lg-6 col-sm-6  pb-3 ">
+            <span style="color: aliceblue; font-size: 40px;"><h2><b>Hello</b></h2><span><b >Myself</b> <b class="txt-mycolor">Adarsh Sharma</b><br>
+
+
+<!-- -----------------Typing--------------- -->
+
+
+    
+<div class="mt-2" id="typing-container">
+  <span id="static-text">I'm working as</span>
+  <span id="animated-text"></span>
+</div>
+
+<script>
+  const words = ["Web-Developer", "Web-Designer", "Freelancer"];
+  let currentWord = 0;
+  let currentChar = 0;
+  let isDeleting = false;
+  const textElement = document.getElementById('animated-text');
+  const typingSpeed = 150;  // Speed of typing
+  const erasingSpeed = 100; // Speed of erasing
+  const delayBetweenWords = 1000; // Delay between words
+
+  function type() {
+    const word = words[currentWord];
+    
+    if (isDeleting) {
+      textElement.innerHTML = word.substring(0, currentChar--);
+      if (currentChar < 0) {
+        isDeleting = false;
+
+        currentWord = (currentWord + 1) % words.length;
+        setTimeout(type, delayBetweenWords);
+      } else {
+        setTimeout(type, erasingSpeed);
+      }
+    } else {
+      textElement.innerHTML = word.substring(0, currentChar++);
+      if (currentChar > word.length) {
+        isDeleting = true;
+        setTimeout(type, delayBetweenWords);
+      } else {
+        setTimeout(type, typingSpeed);
+      }
+    }
+  }
+
+  type();
+</script>
+
+            
+
+
+<!-- ---------------------------- -->
+
+         <span class="mt-4  " >
+              <button  class="text-center shadow btn mb-3" style="border: 2px solid aliceblue; border-radius: 20px;font-weight: 100; font-size: 15px; padding: 10px;" popovertarget="my-popover">
+              <a href="#contact"> <b class="txt-mycolor" >Hire Me / Contact Me</b></a>
+                   </button>
+
+                     </span>
+                    
+
+         
+
+           <ul class="mt-3" style="display: flex;justify-content: center;">
+
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <a href="mailto:sharshh00@gmail.com"><img src="images/mail-outline.svg" height="30"></a>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title"></p>
+  
+                <a href="index.html" class="contact-link"></a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+              <div class="icon-box">
+              <a href="https://www.instagram.com/adarsharma_605?igsh=bmxwMmVhbDFiY2du"> <img src="images/logo-instagram.svg" height="30"></a>
+              </div>
+            
+  
+              <div class="contact-info">
+                <p class="contact-title"></p>
+  
+                <a href="tel:+918303887363" class="contact-link"></a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+              <div class="icon-box">
+       <a href="https://wa.me/+918303887363"> <img src="images/logo-whatsapp.svg" height="30"></a>
+              </div>
+            
+  
+              <div class="contact-info">
+                <p class="contact-title"></p>
+  
+                <a href="tel:+918303887363" class="contact-link"></a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+              <div class="icon-box">
+                <a href="
+                https://www.linkedin.com/in/adarsh-sharma-0769a6284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+                "><img src="images/logo-linkedin.svg" height="30"></a>
+              </div>
+            
+  
+              <div class="contact-info">
+                <p class="contact-title"></p>
+  
+                <a href="tel:+918303887363" class="contact-link"></a>
+              </div>
+  
+            </li>
+            
+            <li class="contact-item">
+              <div class="icon-box">
+       <a href="https://github.com/im-adarsharma
+       https://wa.me/+918303887363
+       "><img src="images/logo-github.svg" height="30"></a>
+              </div>
+            
+  
+              <div class="contact-info">
+                <p class="contact-title"></p>
+  
+                <a href="tel:+918303887363" class="contact-link"></a>
+              </div>
+  
+            </li>
+  
+          </ul>
+  
+           
+
+          
+        
+            
+            
+            
+           
+          </div>
+
+
+
+        <div class="col-lg-6 col-sm-6 n  me-0 text-center ">
+            
+            <img class="img-fluid " src="images/my.jpg" style="height:350px;border-radius: 50%;border: 3px solid aliceblue;">
+ 
+        </div>
+       
+
+
+
+
+
+    </div>
+   
+    <hr class="text-light">
+
+
+    <!-- --------------What i do------------- -->
+
+    <div class="container ">
+    <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <header>
+            <h2 class="h2 article-title mt-4 ">What I do..!</h2>
+          </header>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
+
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                  Professional development of applications for Android.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Advertisement Creation</h4>
+
+                <p class="service-item-text">
+                  I make high-quality Ads for Professional Brands And Individuals.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+</div>
+
+
+
+<!-- ==================-About Me-------------- -->
+    <hr>
+    <div class="container ">
+      <header>
+        <h2 class="h2 article-title ">About Me</h2>
+      </header>
+      <div class="row content-card text-start">
+        <div class="col-lg-6 col-md-4 col-sm-6 ps-4"><img  class="img-fluid shadow " src="images/me2.png" style="height: 280px; border-radius:50%; border: 2px solid aliceblue;"></div>
+        <div  class="col-lg-6 col-md-6 col-sm-6 ">
+          
+        
+            <p class="fs-5 text-light textElement">
+              <b class="fs-1">📌</b>I'm Web Developer from Lucknow, Working in Web Development & Content Designing.
+              I enjoy
+              turning complex problems into simple, beautiful and intuitive designs.
+              My job is to build your website so that it is functional and user-friendly but at the same time attractive.
+              <!-- Moreover, I
+              add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
+              across your
+              message and identity in the most creative way. I created web design for many famous brand companies.  -->
+            </p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------------------- -->
+
+
+
+
+
+
+    <!-- ------------------Projects-------------------- -->
+    <div class="container ">
+       
+   <section class="pt-3" id="projects">
+    <header>
+      <h2 class="h2 article-title ">My Projects</h2>
+    </header>
+
+      <ul class="project-list">
+
+        <li class="project-item  active" data-filter-item data-category="web development">
+          <a href="#">
+
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+
+              <img src="images/project-1.jpg" alt="finance" loading="lazy">
+            </figure>
+
+            <h3 class="project-title">Dashboard</h3>
+
+            <p class="project-category">Web development</p>
+
+          </a>
+        </li>
+
+        <li class="project-item  active" data-filter-item data-category="web development">
+          <a href="#">
+
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+
+              <img src="images/project-2.png" alt="orizon" loading="lazy">
+            </figure>
+
+            <h3 class="project-title">Portfolio</h3>
+
+            <p class="project-category">Web Design</p>
+
+          </a>
+        </li>
+
+        <li class="project-item  active" data-filter-item data-category="web design">
+          <a href="#">
+
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+
+              <img src="images/project-3.jpg" alt="fundo" loading="lazy">
+            </figure>
+
+            <h3 class="project-title">Fundo</h3>
+
+            <p class="project-category">Web design</p>
+
+          </a>
+        </li>
+
+        <li class="project-item  active" data-filter-item data-category="applications">
+          <a href="#">
+
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+
+              <img src="images/project-4.png" alt="brawlhalla" loading="lazy">
+            </figure>
+
+            <h3 class="project-title">Application</h3>
+
+            <p class="project-category">Application Design</p>
+
+          </a>
+        </li>
+
+        <li class="project-item  active" data-filter-item data-category="web design">
+          <a href="#">
+
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+
+              <img src="images/project-5.png" alt="dsm." loading="lazy">
+            </figure>
+
+            <h3 class="project-title">Web Page</h3>
+
+            <p class="project-category">Website</p>
+
+          </a>
+        </li>
+
+        <li class="project-item  active" data-filter-item data-category="web design">
+          <a href="#">
+
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+
+              <img src="images/project-6.png" alt="metaspark" loading="lazy">
+            </figure>
+
+            <h3 class="project-title"></h3>
+
+            <p class="project-category">Web design</p>
+
+          </a>
+        </li>
+    </div>
+    </section>
+    <!-- <div class="container ">
+        <div class="row text-center mt-5 a8">
+          <div class="col-lg-4 col-md-6   card-body a7 shadow"><a style="text-decoration: none; color:aliceblue;" href="#"><i class="fa-solid fa-spin fa-bullseye fs-1"></i><br><img class="h-100 w-100" src="images/project-4.png"></a></div>
+            <div class="col-lg-4 col-md-6 card-body a7 shadow text-center"><a style="text-decoration: none; color:aliceblue;" href="#"><i class="fa-solid fa-spin fa-bullseye fs-1"></i><br><img class="h-100 w-100" src="images/project-5.png"></a></div>
+            <div class="col-lg-4 col-md-6 card-body a7 shadow"><a style="text-decoration: none; color:aliceblue;" href="#"><i class="fa-solid fa-spin fa-bullseye fs-1"></i><br><img class="h-100 w-100" src="images/project-6.png"></a></div>
+        </div>
+    </div> -->
+
+
+
+
+
+<!-- --------Testimonal--- -->
+<div class="row ">
+  <!--   
+
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <header>
+            <h2 class="h2 article-title mt-5">Testimonials</h2>
+          </header>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img   src="images/v1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr. Ansh Singh</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                   Mr. Adarsh was hired to create a corporate identity. We were very pleased with the work done. he has a
+                    lot of experience
+                    and is very concerned about the needs of client.
+
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img style="border-radius: 20px;"  src="images/v2.png" alt="Jessica miller" height="80" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr.Ayush Maurya</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                   I have a website that is made by someone else but after sometime i saw the work of Adarsh So i Hired him for Updation of my website, and i gave him my upcoming projects.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img style="border-radius: 20px;" src="images/vk.png" alt="Emily evans" height="80" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr. Vikash Yadav</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                   I hired Adarsh for my School Project.He Did very Well. The Web Was Responsive and Animated.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img  style="border-radius: 20px;" src="images/v4.jpg" alt="Henry william" height="80" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr.Abhay Singh</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                 I have a coffe Caffe.website is made by Mr Adarsh.website is Well designed and Responsive
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+</div>
+
+        <!--
+          - testimonials modal
+        --> 
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src=".images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src=".images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+</div>
+<!-- --------Testimonal end--- -->
+
+
+
+
+
+  <!-- ----------------------Resume------------------------ -->
+  <section id="resume">
+    <section class="timeline pt-3">
+          <header>
+            <h2 class="h2 article-title ">Resume</h2>
+          </header>
+  
+        
+  
+            <div class="title-wrapper">
+              <div class="icon-box2">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+  
+              <h3 class="h3">Education</h3>
+            </div>
+  
+            <ol class="timeline-list">
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">BOARD OF TECHNICAL EDUACTION UTTAR PRADESH</h4>
+  
+                <span>2021 — 2024</span>
+  
+                <p class="timeline-text">
+                 I have completed my Computer Science & Engineering from FGP, Which is affliated by Board Of technical Eduaction Uttar Pradesh
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Board Of High School And InterMediate Eduacation Uttar Pradesh...</h4>
+  
+                <span>2021</span>
+  
+                <p class="timeline-text">
+                 Completed My Intermediate From RRI College with Science Stream and I took Biology....
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Board Of hoghschool And Intermeadiate Education Uttar Pradesh</h4>
+  
+                <span>2019</span>
+  
+                <p class="timeline-text">
+               I have completed my Highschool From PNMI College...
+                </p>
+  
+              </li>
+  
+            </ol>
+  
+          </section>
+  
+          <section class="timeline">
+  
+            <div class="title-wrapper">
+              <div class="icon-box2">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+  
+              <h3 class="h3">Experience</h3>
+            </div>
+  
+            <ol class="timeline-list">
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Content Writer</h4>
+  
+                <span>2024 — Present</span>
+  
+                <p class="timeline-text">
+                 I'm a Content Writer For Professional Web,Professional Applications and Blogs etc..
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Web Developer</h4>
+  
+                <span>2021-Present</span>
+  
+                <p class="timeline-text">
+               I have Been Coding Since My college Days Where I make a lot of Websites for Caffe Schools And Institutes
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Web designer</h4>
+  
+                <span>2021 — Present</span>
+  
+                <p class="timeline-text">
+   I Usually Design Websites. I have a lot Of Web designs in my Git Hub Profile
+                </p>
+  
+              </li>
+  
+            </ol>
+  
+          </section>
+        </section>
+  
+          <section class="skill">
+  
+            <header>
+              <h2 class="h2 article-title ">My Skills</h2>
+            </header>
+  
+            <ul class="skills-list content-card">
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Web design</h5>
+                  <data value="90">90%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%;"></div>
+                </div>
+  
+              </li>
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Graphic design</h5>
+                  <data value="80">80%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%;"></div>
+                </div>
+  
+              </li>
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Website Updation</h5>
+                  <data value="95">95%</data>
+                </div>
+  
+                <div class="skill-progress-bg" >
+                  <div class="skill-progress-fill " style="width: 90%;"></div>
+                </div>
+  
+              </li>
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Programming</h5>
+                  <data value="90">80%</data>
+                </div>
+  
+                <div class="skill-progress-bg ">
+                  <div class="skill-progress-fill" style="width: 50%;"></div>
+                </div>
+  
+              </li>
+  
+            </ul>
+  
+          </section>
+  
+  <!-- ----------------------Resume end------------------------ -->
+
+
+
+
+
+
+<div class="container mb-3 mt-1">
+  
+    <div class="row mt-3">
+       
+        
+     
+       
+        <div class="col-lg-12 shadow ">
+          <header>
+            <h2 class="h2 article-title  txt-mycolor mt-3">Contact me</h2>
+          </header>
+             <section id="contact">
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="25b399fb-a537-4392-b7fc-15eb7fbf657e">
+
+                <input name="name" style="border-bottom: 2px solid aliceblue; border-radius: 15px;   background:linear-gradient( 190deg, black,white);    background:linear-gradient( 190deg, black,white);" type="text" class="form-control  p-3  placeholder-wave" required placeholder ="Enter Your Name">
+                <input name="mobno" minlength="10" maxlength="10" style="border-bottom: 2px solid aliceblue;  border-radius: 15px;    background:linear-gradient( 190deg, black,white);" type="number" class="form-control mt-2 p-3 placeholder-wave" placeholder="Enter Your 10 Digit Mobile NO " required>
+                <input name="email" style="border-bottom: 2px solid aliceblue;  border-radius: 15px;    background:linear-gradient( 190deg, black,white);" type="email" class="form-control mt-2 p-3 required class placeholder-wave " required placeholder="Enter Your Email">
+<textarea name="message" class="form-control mt-2 pt-4 placeholder-wave" style="background:linear-gradient( 190deg, black,white);border-radius: 15px;" placeholder="Write Your Message" required id="" cols="30"  rows="5"></textarea>
+<input class="button form-control mt-2 p-3 btn btn-outline-light" style="border-bottom: 2px solid aliceblue;border-radius: 15px;" type="submit" value="Submit" >
+            </form>
+          <p id="response"></p>
+
+<!-- -------------------------------------------form------------------------ -->
+
+
+<!-- -------------------------------------------form------------------------ -->
+
+
+
+         
+          </section>
+       </div>
+    
+    </div>
+</div>
+
+
+<div class="footer">
+  <div class="row text-center " style="background-color: black;height: 80px; ">
+    <span class="fs-5 text-light"><b>©️</b> Design & Develop by Mr.<b class="txt-mycolor">"Adarsh Sharma"</b> </span>
+    <i class="fa-brands fa-whatsapp"></i>
+  </div>
+</div>
+
+    </div>
+    <script src="Js/bootstrap.bundle.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
